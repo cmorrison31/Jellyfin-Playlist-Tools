@@ -10,12 +10,16 @@ Jellyfin instance.
  - import_playlist
  - remove_duplicates
 
+## Note
+Jellyfin-Playlist-Tools is not affiliated with the official Jellyfin 
+project
+
 # License
 This project is licensed under the MIT license. See LICENSE for more 
 information.
 
 # Configuration
-Create a config.ini like so:
+Create a `config.ini` file like so:
 
 ```ini
 [jellyfin]
@@ -26,16 +30,15 @@ playlist name = some_playlist
 playlists to combine = some_playlist2, some_playlist3
 ```
 
-Not every configuration option is used at the same time. For example, 
-"playlists to combine" is only relevant and required if you're actively 
+`playlists to combine` is only relevant and required if you're actively 
 combining playlists.
 
 # Example Usage
 Call the script function for the operation you wish to execute. The 
-config.ini file needs to be in the same directory as your script. 
+`config.ini` file needs to be in the same directory as your script. 
 
 For example, if sorting a playlist, the following command will sort the 
-playlist given by "playlist name" in the configuration file.
+playlist given by `playlist name` in the configuration file.
 
 ```python
 from JellyfinPlaylistTools import Scripts
@@ -49,7 +52,3 @@ if __name__ == '__main__':
     main()
 
 ```
-
-# Note
-Jellyfin-Playlist-Tools is not affiliated with the official Jellyfin 
-project
