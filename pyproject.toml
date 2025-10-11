@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "build", "twine"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Jellyfin-Playlist-Tools"
+version = "0.1.0"
+description = "A collection of scripts for managing Jellyfin music playlists"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE.txt" }
+keywords = ["Jellyfin", "Music", "Playlist"]
+authors = [{ name = "Caleb Morrison", email = "cmorrison8191@gmail.com" }]
+maintainers = [{ name = "Caleb Morrison", email = "cmorrison8191@gmail.com" }]
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: Utilities",
+  "Topic :: Multimedia :: Sound/Audio",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+dependencies = ["requests", "thefuzz"]
+
+[project.urls]
+"Source" = "https://github.com/cmorrison31/TerraFrame"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"TerraFrame.Data" = ["*.txt", "*.bin"]
