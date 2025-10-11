@@ -11,8 +11,8 @@ Jellyfin instance.
  - remove_duplicates
 
 ## Note
-Jellyfin-Playlist-Tools is not affiliated with the official Jellyfin 
-project
+Jellyfin-Playlist-Tools is not affiliated with the official 
+[Jellyfin Project.](https://jellyfin.org/)
 
 # License
 This project is licensed under the MIT license. See LICENSE for more 
