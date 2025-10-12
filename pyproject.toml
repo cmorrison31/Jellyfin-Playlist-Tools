@@ -28,7 +28,7 @@ classifiers = [
 dependencies = ["requests", "thefuzz", "mutagen"]
 
 [project.urls]
-"Source" = "https://github.com/cmorrison31/TerraFrame"
+"Source" = "https://github.com/cmorrison31/Jellyfin-Playlist-Tools"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
