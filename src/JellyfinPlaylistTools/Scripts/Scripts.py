@@ -1,10 +1,7 @@
 import re
+from pathlib import Path
 
 from thefuzz import fuzz
-
-import sys
-
-from pathlib import Path
 
 from JellyfinPlaylistTools.Scripts import Utilities
 
@@ -233,8 +230,6 @@ def remove_duplicates():
         count += len(items_to_delete)
 
     print(f'Removed {count} items')
-
-
 
 
 def fix_genres(root_dir):
