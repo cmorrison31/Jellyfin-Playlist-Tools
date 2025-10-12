@@ -2,6 +2,10 @@ import re
 
 from thefuzz import fuzz
 
+import sys
+
+from pathlib import Path
+
 from JellyfinPlaylistTools.Scripts import Utilities
 
 
@@ -229,3 +233,29 @@ def remove_duplicates():
         count += len(items_to_delete)
 
     print(f'Removed {count} items')
+
+
+
+
+def fix_genres(root_dir):
+    """
+    This function corrects bad genre delimiters and removes bad genre tags
+    from a specified list. Unlike other functions, this function doesn't use
+    the Jellyfin API and instead interacts with the filesystem directly.
+    """
+
+    root_path = Path(root_dir)
+    if not root_path.exists():
+        print(f'Directory {root_dir} not found.')
+        return
+
+    count = 0
+    for dirpath, _, filenames in root_path.walk():
+        for filename in filenames:
+            file_path = dirpath / filename
+            if file_path.suffix.lower() in ['.flac', '.mp3']:
+                if Utilities.fix_genre_tag(file_path):
+                    print(f'Updated: {file_path}')
+                    count += 1
+
+    print(f'Done. Updated genre tags in {count} files.')
