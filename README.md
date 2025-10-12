@@ -15,7 +15,7 @@ Jellyfin-Playlist-Tools is not affiliated with the official
 [Jellyfin Project.](https://jellyfin.org/)
 
 # License
-This project is licensed under the MIT license. See LICENSE for more 
+This project is licensed under the MIT license. See LICENSE.txt for more 
 information.
 
 # Configuration
