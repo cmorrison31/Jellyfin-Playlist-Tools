@@ -81,11 +81,30 @@ def export_playlist():
 
     items = server.get_playlist_items(playlist_id)
 
-    with open(config.get('jellyfin', 'playlist name') + '.txt', 'w') as f:
+    with open(config.get('jellyfin', 'playlist name') + '.txt', 'w',
+              encoding='utf-8') as f:
         for i, track in enumerate(items):
             artist = Utilities.select_artist(track)
             f.write('{:.0f} - {} - {} - {}\n'.format(i, artist, track['Album'],
                                                      track['Name']))
+
+
+def export_playlist_m3u():
+    config, server = Utilities.load_config_and_login()
+
+    playlist_id = server.get_playlist_id_from_name(
+        config.get('jellyfin', 'playlist name'))
+
+    items = server.get_playlist_items(playlist_id)
+
+    with open(config.get('jellyfin', 'playlist name') + '.m3u', 'w',
+              encoding='utf-8') as f:
+        f.write('#EXTM3U\n')
+
+        for track in items:
+            r = server.get_item_info(track)
+
+            f.write(f'{r['Path']}\n')
 
 
 def filter_playlist():

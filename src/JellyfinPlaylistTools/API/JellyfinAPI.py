@@ -169,6 +169,18 @@ class ServerConnection:
 
         return response['Items']
 
+    def get_item_info(self, item):
+        params = {
+            'UserId': self.user_id
+        }
+
+        r = requests.get(f'{self.server_url}/Items/{item['Id']}',
+                         headers=self.headers, params=params)
+
+        response = json.loads(r.content.decode('utf-8'))
+
+        return response
+
     def get_album_from_id(self, album_id):
         if album_id in self.album_cache and \
                 self.album_cache[album_id].album is not None:
